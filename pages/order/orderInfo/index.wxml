@@ -1,0 +1,92 @@
+<!--pages/order/orderInfo/index.wxml-->
+<view class="page">
+  <scroll-view class="page-content" scroll-y="true">
+    <view class="top-margin"></view>
+    <view class='order_process'>
+      <view class='process_wrap' wx:for="{{processData}}" wx:key="">
+        <view class='process'>
+          <view class='process_line' style='background:{{item.color}};' wx:if="{{index != 0}}"></view>
+          <view class='process_line' wx:if="{{index == 0}}"></view>
+          <icon class='fa fa-circle-o process_icon' style='color:{{item.color}};'></icon>
+          <view class='process_line' style='background:{{item.color}};' wx:if="{{index != processData.length-1}}"></view>
+          <view class='process_line' wx:if="{{index == processData.length-1}}"></view>
+        </view>
+        <text class='process_name'>{{item.name}}</text>
+      </view>
+    </view>
+
+    <view class='user-message' wx:if='{{orderDeatil.userAddress != null}}'>
+      <icon class='fa  fa-map-marker'></icon>
+      <view class='user-content'>
+        <view class='user-div'>
+          <view>收货人：{{orderDeatil.userName}}</view>
+          <view>电话：{{orderDeatil.userPhone}}</view>
+        </view>
+        <view class='user-div'>
+          <span>收货地址：{{orderDeatil.userAddress}}</span>
+        </view>
+      </view>
+    </view>
+
+    <view class='goods-info'>
+      <view class='goods-message1'>
+        <image class='goods-img' mode="aspectFill" src='{{orderDeatil.imageSrc[0].resourceUrl}}'></image>
+        <view class='goods-content'>
+          <view class="goods-title">{{orderDeatil.goodsName}}</view>
+          <view class="goods-price">￥{{orderDeatil.goodsPrice}}</view>
+          <view class="goods-size">{{orderDeatil.goodsColor}} {{orderDeatil.goodsSize}} x{{orderDeatil.goodsNumber}}</view>
+        </view>
+      </view>
+      <view class='goods-message2'>
+        <view class='goods-div'>订单总价
+          <view style="float:right;color:#fea201;" wx:if='{{orderDeatil.goodsPrice!=null}}'>{{orderDeatil.goodsPrice * orderDeatil.goodsNumber}}</view>
+        </view>
+      </view>
+      <view class='goods-message3'>
+        <view class='goods-div'>实际收款
+          <view style="float:right;color:#fea201;" wx:if='{{orderDeatil.goodsPrice!=null}}'>{{orderDeatil.goodsPrice * orderDeatil.goodsNumber}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='order-info'>
+      <view>订单编号：{{orderDeatil.orderId}}</view>
+      <view>创建时间：{{orderDeatil.createTime}}</view>
+      <view wx:if='{{orderDeatil.expressName!=null}}'>快递公司：{{orderDeatil.expressName}}</view>
+      <view wx:if='{{orderDeatil.expressName!=null}}'>快递单号：{{orderDeatil.expressNumber}}</view>
+    </view>
+  </scroll-view>
+  <view class='operation'>
+    <navigator url='../../chat/index?userId={{orderDeatil.userId}}' class='fa fa-weixin'></navigator>
+    <view class="action-area">
+      <navigator class="action-item" wx:if="{{orderDeatil.status == 2}}" url='../delivery/index?orderId={{orderDeatil.orderId}}&orderType=0' style='background:#4ac4ca;color:#ffffff;'>立即发货</navigator>
+
+      <view class="action-item" wx:if="{{orderDeatil.status == 3}}" style='background:#c3c3c3;color:#ffffff;'>配送中</view>
+
+      <view class="action-item" wx:if="{{orderDeatil.status == 5}}" bindtap='comment'>查看评价</view>
+    </view>
+  </view>
+</view>
+<view class='mask' hidden='{{!showComment}}'>
+  <view class='comment'>
+    <view class='close fa fa-close' bindtap='closeComment'></view>
+    <view class='content-box'>
+      <view>评论内容:</view>
+      <view class='content' wx:if='{{comment !== null}}'>{{comment.content}}</view>
+      <view class='content' wx:else>用户超时未评价</view>
+    </view>
+    <view class='content-box' wx:if='{{comment !== null && comment.imageSrc !== null}}'>
+      <view>评论图片:</view>
+      <view class='images'>
+        <block wx:for='{{comment.imageSrc}}' wx:for-item='item' wx:key='{{item.resourceId}}'>
+          <image mode='aspectFill' src='{{item.resourceUrl}}' data-current='{{item.resourceUrl}}'
+            bindtap='previewImage'></image>
+        </block>
+      </view>
+    </view>
+    <view class='content-box' wx:if='{{comment !== null}}'>
+      <view>评论时间:</view>
+      <view class='time'>{{comment.createTime}}</view>
+    </view>
+  </view>
+</view>

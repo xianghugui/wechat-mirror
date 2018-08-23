@@ -1,0 +1,60 @@
+/* pages/order/recedeManage/disagreeRefundsInfo/index.wxss */
+page{
+  background-color: #f3f3f3;
+}
+.input-div{
+  width: 100%;
+  height: 200rpx;
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding: 10px;
+  font-size: 30rpx;
+}
+.img-v{
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+.goodsImages{
+  width: 160rpx;
+  height: 160rpx;
+}
+.fa-photo{
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 22rpx;
+  font-size: 100rpx;
+  border-radius: 10rpx;
+  color: #CECECE;
+  text-align: center;
+  line-height: 156rpx;
+  border: 10rpx dashed #CECECE;
+}
+.imgbox{
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 22rpx;
+  margin-bottom: 22rpx;
+  float: left;
+}
+.delete-btn{
+  position: absolute;
+  right: 0rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  background-color: red;
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+}
+
+.disagree{
+  width: 560rpx;
+  margin-top: 100rpx;
+  background-color: #49c4cb;
+  border-radius: 40rpx;
+  color: #ffffff;
+}

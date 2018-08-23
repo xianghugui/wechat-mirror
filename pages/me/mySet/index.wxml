@@ -1,0 +1,15 @@
+<!--pages/me/mySet/index.wxml-->
+<view class="page">
+  <navigator  class='navigator' url='modifyPassword/index'>
+    <view class=''>修改密码</view>
+    <view class='navigator-arrow'></view>
+  </navigator>
+  <navigator  class='navigator' url=''>
+    <view class=''>关于我们</view>
+    <view class='navigator-arrow'></view>
+  </navigator>
+  <navigator  class='navigator' url=''>
+    <view class=''>联系我们</view>
+    <view class='navigator-arrow'></view>
+  </navigator>
+</view>

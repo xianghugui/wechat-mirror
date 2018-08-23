@@ -1,0 +1,28 @@
+/* pages/order/recedeManage/index.wxss */
+@import '../orderManage/index.wxss';
+.goods-item{
+  margin-bottom:20rpx;
+}
+.goods-content{
+  margin-bottom:0;
+}
+.recede-price{
+  height:80rpx;
+  line-height:80rpx;
+  text-align: right;
+  font-size: 28rpx;
+  background-color:white;
+  border-top:1px solid #E8E8E8;
+  box-sizing:border-box;
+  padding-right:14.5px;
+  color:#e4393c;
+}
+
+.image{
+  width: 150rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 25rpx;
+  left: -25rpx;
+  transform: rotate(90deg);
+}

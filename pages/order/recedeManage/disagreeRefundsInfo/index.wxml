@@ -1,0 +1,15 @@
+<!--pages/order/recedeManage/disagreeRefundsInfo/index.wxml-->
+<form bindsubmit='formSumbit'>
+<textarea class='input-div' placeholder='请输入拒绝原因' name="content"></textarea>
+<view class="img-v">
+    <view class="img" wx:for="{{tempFilePaths}}" wx:for-item="item" wx:key="index">
+      <view class='imgbox'>
+        <image wx:if='{{item.resourceUrl != null}}' class='goodsImages' src="{{item.resourceUrl}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+        <image wx:else class='goodsImages' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+        <view class="delete-btn fa fa-close" data-index="{{index}}" catchtap="deleteImg"></view>
+      </view>
+    </view>
+    <image class="fa fa-photo upload-img-btn" bindtap="chooseImg"></image>
+</view>
+<button class='disagree' form-type='submit'>确定拒绝</button>
+</form>

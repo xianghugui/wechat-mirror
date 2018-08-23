@@ -1,0 +1,93 @@
+<!--pages/order/videoOrderInfo/index.wxml-->
+<view class="page">
+  <scroll-view scroll-y="true" class="page-content">
+    <view class="top-margin"></view>
+    <view class='order_process'>
+      <view class='process_wrap' wx:for="{{processData}}" wx:key="">
+        <view class='process'>
+          <view class='process_line' style='background:{{item.color}};' wx:if="{{index != 0}}"></view>
+          <view class='process_line' wx:if="{{index == 0}}"></view>
+          <icon class='fa fa-circle-o process_icon' style='color:{{item.color}};'></icon>
+          <view class='process_line' style='background:{{item.color}};' wx:if="{{index != processData.length-1}}"></view>
+          <view class='process_line' wx:if="{{index == processData.length-1}}"></view>
+        </view>
+        <text class='process_name'>{{item.name}}</text>
+      </view>
+    </view>
+
+    <view class='user-message' wx:if='{{orderDeatil.status != 0 && orderDeatil.status != 1}}'>
+      <icon class='fa  fa-map-marker'></icon>
+      <view class='user-content'>
+        <view class='user-div'>
+          <view>收货人：{{orderDeatil.userName}}</view>
+          <view>电话：{{orderDeatil.userPhone}}</view>
+        </view>
+        <view class='user-div'>
+          <view>收货地址：{{orderDeatil.userAddress}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='goods-info'>
+      <view class='goods-message1'>
+        <view class='goods-img'>
+          <image mode="aspectFill" class='image' src='{{orderDeatil.imageSrc}}'></image>
+        </view>
+        <view class='goods-content'>
+          <view class="goods-title" style="font-size:36rpx;color:#fea201;" wx:if='{{orderDeatil.status!=0}}'>￥{{orderDeatil.goodsPrice}}</view>
+          <view class="goods-title" style="font-size:36rpx;color:#fea201;" wx:else>待报价</view>
+          <view style="font-size:24rpx;color:#c0c0c0;"> {{orderDeatil.goodsSize}}</view>
+          <view style="font-size:24rpx;color:#c0c0c0;" wx:if='{{orderDeatil.goodsNumber!=null}}'> x{{orderDeatil.goodsNumber}}</view>
+        </view>
+      </view>
+      <view class='goods-message2' wx:if='{{orderDeatil.status!=0}}'>
+        <view class='goods-div'>订单总价
+          <view style="float:right;">{{orderDeatil.goodsPrice}}</view>
+        </view>
+      </view>
+      <view class='goods-message3' wx:if='{{orderDeatil.status!=0}}'>
+        <view class='goods-div'>实际收款
+          <view style="float:right;">{{orderDeatil.goodsPrice}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='order-info'>
+      <view wx:if="{{orderDeatil.videoOrderId!=null}}">询价编号：{{orderDeatil.videoOrderId}}</view>
+      <view wx:if="{{orderDeatil.createTime!=null}}">询价时间：{{orderDeatil.createTime}}</view>
+      <view wx:if="{{orderDeatil.updateTime!=null}}">报价时间：{{orderDeatil.updateTime}}</view>
+      <view wx:if="{{orderDeatil.paymentTime!=null}}">付款时间：{{orderDeatil.paymentTime}}</view>
+      <view wx:if="{{orderDeatil.theDeliveryTime!=null}}">发货时间：{{orderDeatil.theDeliveryTime}}</view>
+      <view wx:if="{{orderDeatil.expressName!=null}}">快递公司：{{orderDeatil.expressName}}</view>
+      <view wx:if="{{orderDeatil.expressNumber!=null}}">快递单号：{{orderDeatil.expressNumber}}</view>
+    </view>
+  </scroll-view>
+  <view class='operation'>
+    <icon class='fa fa-weixin' style="font-size:45rpx;"></icon>
+    <view class="action-area">
+      <navigator class="action-item" wx:if="{{orderDeatil.status == 2}}" url='../delivery/index?orderId={{orderDeatil.videoOrderId}}&orderType=2' style='background:#4ac4ca;color:#ffffff;'>立即发货</navigator>
+      <view class="action-item" wx:if="{{orderDeatil.status == 0}}" style='background:#4ac4ca;color:#ffffff;' bindtap='delivery'>报价</view>
+
+      <view class="action-item" wx:if="{{orderDeatil.status == 3 || orderDeatil.status == 4}}" style='background:#c3c3c3;color:#ffffff;'>配送中</view>
+    </view>
+  </view>
+</view>
+<!-- 报价弹出框 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<form bindsubmit="formSubmit" animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='inputLint'>
+    <view class="text">单价</view>
+    <input type='digit' placeholder='请输入报价' name='price' value="{{quotePrice}}"></input>
+    <view class="text">元</view>
+  </view>
+  <view class="commodity-tip">价格报出后不可修改，请谨慎报价</view>
+  <view class="btn-area">
+    <view>
+      <button formType="submit">立即报价</button>
+    </view>
+    <view catchtap="formCancel">
+      取消
+    </view>
+  </view>
+
+</form>

@@ -1,0 +1,55 @@
+/* pages/me/mySet/modifyPassword/index.wxss */
+.page-content{
+  padding:0 44rpx;
+  box-sizing:border-box;
+}
+.modify-form{
+  width:100%;
+}
+.form-item{
+  width:100%; 
+  height:106rpx;
+  padding-left:150rpx;
+  box-sizing:border-box;
+  font-size:32rpx;
+  border-bottom:1px solid #E6E5E5;
+  position:relative;
+}
+.item-title{
+  height:106rpx;
+  line-height:106rpx;
+  color:#2E2E2E;
+  width:200rpx;
+  position:absolute;
+  left:0;
+  top:0;
+}
+.form-item input{
+  height:106rpx;
+  line-height:106rpx;
+}
+.btn-area{
+  width:500rpx;
+  height:75rpx;
+  margin-top:90rpx;
+  margin-left:calc(50% - 250rpx);
+  border-radius:50rpx;
+  overflow:hidden;
+}
+.btn-area button{
+  height:75rpx;
+  line-height:75rpx;
+  text-align:center;
+  background-color: #40BEC2;
+  font-size:30rpx;
+  color:#fff;
+  transform:scale(1.2);
+}
+.forget-password{
+  margin-top:28rpx;
+  font-size:34rpx;
+  color:#45C0C4;
+  text-align:center;
+  position:relative;
+  left:10rpx;
+}

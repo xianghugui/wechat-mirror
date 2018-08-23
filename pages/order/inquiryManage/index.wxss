@@ -1,0 +1,31 @@
+/* pages/order/inquiryManage/index.wxss */
+@import '../orderManage/index.wxss';
+
+.clear{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: -35rpx;
+  right: -35rpx;
+}
+
+.goods-img{
+  position: relative;
+}
+
+.goods-img>image:first-child{
+  width: 150rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 25rpx;
+  left: -25rpx;
+  transform: rotate(90deg);
+}
+
+.goods-img>image:last-child{
+  position: absolute;
+  height: 40rpx;
+  width: 40rpx;
+  top: 55rpx;
+  left: 30rpx;
+}

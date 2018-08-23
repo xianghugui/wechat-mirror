@@ -1,0 +1,32 @@
+<!--pages/me/index.wxml-->
+<view class='me-content page'>
+  <view class='me-show' url=''>
+    <image class='me-img' src='{{shop.imageUrl}}'></image>
+    <view class='me-text'>
+      <view class='me-title'>{{shop.name}}</view>
+      <view class='me-address'>地址：{{shop.address}}</view>
+    </view>
+  </view>
+  <view class='navigator-box'>
+    <navigator class='navigator' url='../conversations/index'>
+      <view class=''>
+        会话列表
+        <view class='remind' wx:if='{{hasUnread}}'></view>
+      </view>
+      <view class='navigator-arrow'></view>
+    </navigator>
+    <navigator class='navigator' url='trading/index'>
+      <view class=''>交易中</view>
+      <view class='navigator-arrow'></view>
+    </navigator>
+    <navigator class='navigator' url='incomeDetail/index'>
+      <view class=''>交易完成</view>
+      <view class='navigator-arrow'></view>
+    </navigator>
+    <navigator class='navigator' url='mySet/index'>
+      <view class=''>设置</view>
+      <view class='navigator-arrow'></view>
+    </navigator>
+  </view>
+
+</view>

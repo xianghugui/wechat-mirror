@@ -1,0 +1,86 @@
+/* pages/order/videoOrderInfo/index.wxss */
+@import "../orderInfo/index.wxss";
+/* 遮罩层 */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/* 报价框 */
+.commodity_attr_box {
+  width: 100%;
+  height: 350rpx;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding:30rpx 14.5px;
+  font-size:36rpx;
+  box-sizing:border-box;
+}
+
+.inputLint{
+  width:calc(100% - 29px);
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputLint input{
+  line-height: 100rpx;
+  width: 450rpx;
+  height: 100rpx;
+}
+.inputLint text{
+  line-height: 100rpx;
+  width: 80rpx;
+  height: 100rpx;
+}
+
+.commodity-tip{
+  color:#e4393c;
+}
+
+.commodity_attr_box .btn-area{
+  padding-left:50rpx;
+  height:60rpx;
+  margin-top:50rpx;
+}
+.commodity_attr_box .btn-area view{
+  float:right;
+  max-width: 300rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-right:50rpx;
+  border-radius:40rpx;
+  overflow:hidden;
+}
+.commodity_attr_box .btn-area button{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align:center;
+  font-size:30rpx;
+  background-color: #42C8D1;
+  color: white;
+  transform:scale(1.2);
+}
+
+.image{
+  height: 100rpx;
+  width: 150rpx;
+  top: 25rpx;
+  left: -25rpx;
+  position: absolute;
+  transform: rotate(90deg);
+}

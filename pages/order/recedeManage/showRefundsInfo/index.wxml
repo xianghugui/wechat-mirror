@@ -1,0 +1,100 @@
+<!--pages/order/recedeManage/showRefundsInfo/index.wxml-->
+<scroll-view scroll-y="true" class="page page-content">
+  <view class='time-line'></view>
+  <!-- 完成退款请求 -->
+  <view class='show-div' wx:if="{{info.status >= 3 && info.status != 4}}">
+    <view class='show-ruan'></view>
+    <view class='show'>
+      <view class='show-title'>完成退款请求</view>
+      <view class='show-content'>
+        <view>完成退款</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 待平台退款 -->
+  <view class='show-div' wx:if='{{info.status >= 2 && info.status != 4 && info.refundType == 1}}'>
+    <view class='show-ruan'></view>
+    <view class='show'>
+      <view class='show-title'>待平台退款</view>
+      <view class='show-content'>
+        <view>等待平台退款中</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 买家取消 -->
+  <view class='show-div' wx:if='{{info.status == 4}}'>
+    <view class='show-ruan'></view>
+    <view class='show'>
+      <view class='show-title'>买家取消退款</view>
+      <view class='show-content'>
+        <view>买家取消退款</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商家确认收货 -->
+  <view class='show-div' wx:if='{{info.status > 1 && info.refundType == 1}}'>
+    <view class='show-ruan'></view>
+    <view class='show'>
+      <view class='show-title'>商家确认收货</view>
+      <view class='show-content'>
+        <view>商家确认收货</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 用户申请退款没发货前 -->
+  <view class='show-div' wx:if='{{info.status >= 0 && info.refundType == 0}}'>
+    <view class='show-ruan'></view>
+    <view class='show'>
+      <view class='show-title'>申请退款</view>
+      <view class='show-content'>
+        <view>退款类型：退款</view>
+        <view>原因：{{info.content}}</view>
+        <view wx:if='{{info.type != 1 && info.price != null}}'>商品退款：
+          <view style="color:#FF0216;display:inline-block">￥{{info.price}}</view>
+        </view>
+      </view>
+      <view class='create-time'>{{info.applicationTime}}</view>
+    </view>
+  </view>
+  <!-- 待商家确认收货 -->
+  <view class='show-div' wx:if='{{info.status >= 1 && info.refundType == 1}}'>
+    <view class='show-ruan'></view>
+    <view class='show'>
+      <view class='show-title'>待商家确认收货</view>
+      <view class='show-content'>
+        <view>快递公司：{{info.expressName != null ? info.expressName : ''}}</view>
+        <view>快递单号：{{info.expressNumber != null ? info.expressNumber : ''}}</view>
+      </view>
+      <view class='show-bottom' wx:if='{{info.status == 1}}'>
+        <button class='show-button' open-type="contact">联系平台</button>
+        <button class='show-button confirm' bindtap='confirm' disabled='{{disabled}}'>
+          确认收货
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 申请退款 -->
+  <view class='show-div' wx:if='{{info.status >= 0 && info.refundType == 1}}'>
+    <view class='show-ruan'></view>
+    <view class='show'>
+      <view class='show-title'>申请退货</view>
+      <view class='show-content'>
+        <view>退款类型：退货</view>
+        <view>原因：{{info.content}}</view>
+        <view style='color:red' wx:if="{{info.altImageSrc != null && info.altImageSrc.length > 0}}" bindtap="previewAltImage">
+          查看申请退货图片
+        </view>
+        <view wx:if='{{info.type != 1 && info.price != null}}'>商品退款：
+          <view style="color:#FF0216;display:inline-block">￥{{info.price*100*info.num/100}}</view>
+        </view>
+
+      </view>
+      <view class='create-time'>{{info.applicationTime}}</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,10 @@
+/* pages/me/mySet/index.wxss */
+.navigator{
+  position:relative;
+  padding:18px 14.5px;
+  color:#2E2E2E;
+  background-color: #FFFFFF;
+  font-size: 34rpx;
+  line-height: 1.41176471;
+  border-bottom:1px solid #E6E5E5;
+}

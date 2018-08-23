@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/goods/index",
+    "pages/goods/editGoods/index",
+    "pages/goods/showGoods/index",
+    "pages/order/index",
+    "pages/order/delivery/index",
+    "pages/order/orderManage/index",
+    "pages/order/inquiryManage/index",
+    "pages/order/inquiryManage/video/index",
+    "pages/order/recedeManage/index",
+    "pages/order/recedeManage/showRefundsInfo/index",
+    "pages/order/recedeManage/disagreeRefundsInfo/index",
+    "pages/order/orderInfo/index",
+    "pages/order/videoOrderInfo/index",
+    "pages/message/index",
+    "pages/message/messageInfo/index",
+    "pages/me/index",
+    "pages/me/incomeDetail/index",
+    "pages/me/trading/index",
+    "pages/me/mySet/index",
+    "pages/me/mySet/modifyPassword/index",
+    "pages/chat/index",
+    "pages/conversations/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "#ffffff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#232428",
+    "color": "#575966",
+    "selectedColor": "#48C6CF",
+    "list": [
+      {
+        "iconPath": "static/imgs/clothes.png",
+        "selectedIconPath": "static/imgs/clothes-s.png",
+        "pagePath": "pages/goods/index",
+        "text": "商品"
+      },
+      {
+        "iconPath": "static/imgs/order.png",
+        "selectedIconPath": "static/imgs/order-s.png",
+        "pagePath": "pages/order/index",
+        "text": "订单"
+      },
+      {
+        "iconPath": "static/imgs/message.png",
+        "selectedIconPath": "static/imgs/message-s.png",
+        "pagePath": "pages/message/index",
+        "text": "资讯"
+      },
+      {
+        "iconPath": "static/imgs/me.png",
+        "selectedIconPath": "static/imgs/me-s.png",
+        "pagePath": "pages/me/index",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+/* pages/goods/showGoods/index.wxss */
+page{
+  background-color: #000000;
+  color: #ffffff;
+}
+.show-goods{
+  background-color: #000000;
+}
+/* 直接设置swiper属性 */
+swiper {
+  width:100%;
+  height: 100%;
+}
+swiper-item{
+  width:100%;
+}
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+.goods-content{
+  width:100%;
+  position:absolute;
+  bottom:0;
+  background-color: #000000;
+  opacity:0.3;
+}
+.goods-title{
+  float: left;
+  width: 60%;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 10rpx 20rpx; 
+  color:#fff;
+  box-sizing:border-box;
+}
+.goods-price{
+  width:40%;
+  float:right;
+  text-align: right;
+  padding: 10rpx 20rpx;
+  color: yellow;
+  box-sizing:border-box;
+  font-size: 36rpx;
+}
+.goods-text{
+  width: 100%;
+  float: left;
+  color:#fff;
+}
+.goods-text{
+  margin-bottom:20rpx;
+}
+.goods-shop{
+  padding-left: 20rpx;
+  font-size:30rpx;
+}
+.goods-spec{
+  float: right;
+  padding-right: 10px;
+  font-size:15px;
+}

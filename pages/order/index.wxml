@@ -1,0 +1,17 @@
+<!--pages/order/index.wxml-->
+<view class='content page'>
+  <view class='box-content'>
+    <view class='box' style="margin-right:3.33%;" bindtap='orderManage'>
+      <image src='../../static/imgs/sy_gw@2x.png'></image>
+      <label>订单管理</label>
+    </view>
+    <view class='box'  style="margin-right:3.33%;" bindtap='inquiryManage'>
+      <image src='../../static/imgs/sy_xj@2x.png'></image>
+      <label>询价管理</label>
+    </view>
+    <view class='box' bindtap='recedeManage'>
+      <image src='../../static/imgs/sy_tk@2x.png'></image>
+      <label>退货退款</label>
+    </view>
+  </view>
+</view>

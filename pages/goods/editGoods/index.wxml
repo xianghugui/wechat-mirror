@@ -1,0 +1,122 @@
+<!--pages/editGoods/index.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="img-v">
+    <view class="img" wx:for="{{imagesArray}}" wx:for-item="item" wx:key="resourceId">
+      <view class='imgbox'>
+        <image wx:if='{{item.resourceUrl != null}}' class='goodsImages' src="{{item.resourceUrl}}" data-src="{{item.resourceUrl}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+        <image wx:else class='goodsImages' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+        <image class="delete-btn" data-index="{{index}}" catchtap="deleteImg" src='../../../static/imgs/close.png'></image>
+      </view>
+    </view>
+    <view class="fa fa-photo upload-img-btn" bindtap="chooseImg"></view>
+    <view class="fa upload-img-btn {{uploading?'':'fa-video-camera'}}" bindtap="chooseVideo" hidden='{{videoId!=null}}'>
+      <view class='fa fa-spinner uploading' hidden='{{!uploading}}'></view>
+    </view>
+    <video id='goodsVideo' autoplay muted hidden='{{videoId==null}}' src='{{videoSrc}}' controls='{{false}}' show-center-play-btn='{{false}}'>
+      <cover-image class="delete-btn" catchtap="deleteVideo" src='../../../static/imgs/close.png'></cover-image>
+    </video>
+  </view>
+  <view class='inputLint'>
+    <view class="inputTitle">标题</view>
+    <input name='name' placeholder="请填写商品标题" value='{{ goodsName }}' bindinput='goodsNameChange'></input>
+  </view>
+  <view class="inputLint">
+    <view class="inputTitle">品牌</view>
+    <picker name='brandId' bindchange="brandsPickerChange" value="{{brandsArray[brandsArrayIndex].u_id}}" range="{{brandsArray}}" range-key='name'>
+      <view class="picker">
+        {{brandsArray[brandsArrayIndex].name}}
+        <icon class='fa fa-angle-right'></icon>
+      </view>
+    </picker>
+  </view>
+  <view class="inputLint">
+    <view class="inputTitle">类目</view>
+    <picker mode="multiSelector" name='classId' bindchange="bindMultiPickerChange" bindcolumnchange="classPickerChange" value="{{classIndex}}" range="{{selectClassArray}}" range-key='className'>
+      <view class="picker">
+        <block wx:if='{{classIndex.length > 0}}'>
+          {{classArray[classIndex[0]].className}}
+          <icon class='fa fa-angle-right'></icon>{{classArray[classIndex[0]].node[classIndex[1]].className}}
+          <icon class='fa fa-angle-right'></icon>{{classArray[classIndex[0]].node[classIndex[1]].node[classIndex[2]].className}}
+        </block>
+        <icon wx:else class='fa fa-angle-right'></icon>
+      </view>
+    </picker>
+  </view>
+  <view class="inputLint">
+    <view class="inputTitle">性别</view>
+    <picker name='sex' bindchange="sexPickerChange" value="{{sexArray[sexIndex].name}}" range="{{sexArray}}" range-key='name'>
+      <view class="picker">
+        {{sexArray[sexIndex].name}}
+        <icon class='fa fa-angle-right'></icon>
+      </view>
+    </picker>
+  </view>
+  <view class="inputLint">
+    <view class="inputTitle">人群</view>
+    <picker name='ageGrade' bindchange="crowdPickerChange" value="{{crowdArray[crowdIndex].propertyId}}" range="{{crowdArray}}" range-key='propertyName'>
+      <view class="picker">
+        {{crowdArray[crowdIndex].propertyName}}
+        <icon class='fa fa-angle-right'></icon>
+      </view>
+    </picker>
+  </view>
+  <view class='selectMoudle'>
+    <view class='select-title'>
+      适应场合
+    </view>
+    <view class='select-box'>
+      <checkbox-group name="occasionId" class='moudle-box' bindchange="applicationChange">
+        <label class="moudle-label {{item.checked ? 'borderShow' : ''}}" wx:for="{{applicationArray}}" wx:for-item="item" wx:key="id">
+          <checkbox hidden value="{{item.propertyId}}" checked="{{item.checked}}"></checkbox>
+          {{item.propertyName}}
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class='selectMoudle'>
+    <view class='select-title'>
+      型号
+    </view>
+    <view class='select-box'>
+      <checkbox-group name="sizes" class='moudle-box' bindchange="sizeChange">
+        <label class="moudle-label {{item.checked ? 'borderShow' : ''}}" wx:for="{{sizeArray}}" wx:for-item="item" wx:key="id">
+          <checkbox hidden value="{{item.id}}" checked="{{item.checked}}"></checkbox>
+          {{item.name}}
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class='selectMoudle'>
+    <view class='select-title'>
+      颜色
+    </view>
+    <view class='select-box'>
+      <checkbox-group name="color" class='moudle-box' bindchange="colorChange">
+        <label class="moudle-label {{item.checked ? 'borderShow' : ''}}" wx:for="{{colorArray}}" wx:for-item="item" wx:key="id">
+          <checkbox hidden value="{{item.id}}" checked="{{item.checked}}"></checkbox>
+          {{item.name}}
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+
+
+  <view class='inputLint'>
+    <view class="inputTitle">价格</view>
+    <input name='price' type='digit' value='{{price}}'></input>
+    <view class='event' bindtap='isEvent'>
+      <radio checked='{{isEvent}}'></radio>活动商品</view>
+  </view>
+  <view class='buttonView'>
+    <button formType="submit" class='saveButton'>保存</button>
+  </view>
+</form>
+<!-- 遮罩层 -->
+<view class="mask" wx:if="{{isPreview}}"></view>
+<swiper class="img-preview" current="{{curIndex}}" wx:if="{{isPreview}}">
+  <block wx:for="{{imgs}}" wx:key="resourceId">
+    <swiper-item catchtap="closePreview">
+      <image mode="aspectFill" src="{{item}}" />
+    </swiper-item>
+  </block>
+</swiper>

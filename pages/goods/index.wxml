@@ -1,0 +1,46 @@
+<!--pages/goods/index.wxml-->
+<scroll-view scroll-y="true" class="page" bindscrolltolower="nextpage" style="height: 100%;" lower-threshold="0px">
+  <image class="add-goods" src='../../static/imgs/sp_tj@2x.png' bindtap='addGoodsClick'></image>
+  <block wx:for="{{goodsList}}" wx:key="goodsId">
+
+    <view class='goods-content'>
+      <navigator class='goods-show' url='showGoods/index?goodsId={{item.goodsId}}'>
+        <view class='goods-img-div'>
+          <image class='goods-img' src='{{item.imageUrl}}' mode='aspectFill'></image>
+        </view>
+        <view class='goods-text'>
+          <view class='goods-title'>{{item.name}}</view>
+          <view class="goods-price">￥{{item.price}}</view>
+          <view class="info-item">
+            <view class="goods-type">类目：{{item.className}}</view>
+            <view>人群：{{item.ageGrade}}</view>
+          </view>
+          <view class="info-item">
+            <view class="goods-gender">性别：{{item.sex}}</view>
+            <view class="time">上传时间：{{item.createTime}}</view>
+          </view>
+        </view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+      <view class='icon-content'>
+        <navigator wx:if='{{item.status == 1}}' class='icon' bindtap='shelfClick' data-id='{{item.goodsId}}' data-index='{{index}}' url=''>
+          <image class='operating' src='../../static/imgs/sp_sj@2x.png'></image>
+          <view class='shelf'>上架商品</view>
+        </navigator>
+        <navigator wx:else class='icon' bindtap='dropOffClick' data-id='{{item.goodsId}}' data-index='{{index}}' url=''>
+          <image class='operating' src='../../static/imgs/sp_xj@2x.png'></image>
+          <view>下架商品</view>
+        </navigator>
+        <navigator class='icon' url='editGoods/index?goodsId={{item.goodsId}}'>
+          <image class='operating' src='../../static/imgs/sp_bj@2x.png'></image>
+          <view>编辑商品</view>
+        </navigator>
+        <navigator class='icon' bindtap='deleteClick' data-id='{{item.goodsId}}' data-index='{{index}}' url=''>
+          <image class='operating' src='../../static/imgs/sp_sc@2x.png'></image>
+          <view>删除商品</view>
+        </navigator>
+      </view>
+    </view>
+  </block>
+  <view class="hasMoreData" wx:if="{{goodsList.length == total && goodsList.length>0}}">暂无更多数据</view>
+</scroll-view>

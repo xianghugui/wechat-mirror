@@ -1,0 +1,21 @@
+<!--pages/me/mySet/modifyPassword/index.wxml-->
+<view class="page page-content">
+  <form class="modify-form" bindsubmit="formSubmit">
+    <view class="form-item">
+      <view class="item-title">旧密码</view>
+      <input name="oldPassword" placeholder='请输入旧密码'></input>
+    </view>
+    <view class="form-item">
+      <view class="item-title">新密码</view>
+      <input name="newPassword" placeholder='请输入新密码'></input>
+    </view>
+    <view class="form-item">
+      <view class="item-title">确认密码</view>
+      <input name="surePassword" placeholder='请再输入新密码'></input>
+    </view>
+    <view class="btn-area">
+      <button formType="submit">立即修改</button>
+    </view>
+    <view class="forget-password">忘记密码?</view>
+  </form>
+</view>

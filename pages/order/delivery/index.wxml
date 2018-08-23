@@ -1,0 +1,44 @@
+<!--pages/order/delivery/index.wxml-->
+<view class='user-address'>
+  <text class='message'>请将货物寄到以下用户地址</text>
+  <view class='user-message'>
+    <icon class='fa  fa-map-marker'></icon>
+    <view class='user-content'>
+      <view class='user-div'>
+        <span>收货人：{{userAddress.userName}}</span>
+      </view>
+      <view class='user-div'>电话：{{userAddress.userPhone}}</view>
+      <view class='user-div'>
+        <span>收货地址：{{userAddress.userAddress}}</span>
+      </view>
+    </view>
+  </view>
+</view>
+<form bindsubmit="formSubmit">
+  <view class='expressCss' style='margin-top:15px;'>
+    <!-- <label style='float:left;'>快递公司</label>
+    <input class='express-input' placeholder='请输入快递公司' name='expressName'></input> -->
+    <view class="section">
+      <picker name='expressName' bindchange="bindPickerChange" value="{{index}}" range="{{logisticsList}}" range-key="{{'name'}}">
+      <view class="item-title">快递公司</view>
+        <view class="express-input">
+          {{logisticsList[index].name}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='expressCss' style='border-top: 1px solid #f3f3f3;'>
+    <label style='float:left;'>快递单号</label>
+    <input class='express-input' placeholder='请输入快递单号' name='expressNumber'></input>
+  </view>
+  <view class='express-button-div'>
+    <view class='express-button'>
+      <button class='button-css button1' formType="submit" disabled='{{disabled}}'>立即寄出</button>
+    </view>
+    <view class='express-button'>
+      <button class='button-css button2' bindtap='selfDelivery'>自行配送</button>
+    </view>
+  </view>
+</form>
+
+<!--  -->

@@ -1,0 +1,23 @@
+<!--pages/conversation/index.wxml-->
+<!-- <scroll-view scroll-y> -->
+<movable-area>
+  <block wx:for='{{conversations}}' wx:for-item='item' wx:for-index='index' wx:key='{{item.userId}}'>
+    <movable-view class='conversation' direction='horizontal' x='{{item.x}}' bindchange='onChange' damping='100' data-index='{{index}}' friction='10' inertia>
+      <view class='userInfo' bindtap='toChat' data-userid='{{item.userId}}'>
+        <image class='avatar' src='{{item.avatar}}'></image>
+        <view class='info'>
+          <view class='info-top'>
+            <view class='name'>{{item.name}}</view>
+            <view class='time'>{{item.mtime}}</view>
+          </view>
+          <view class='info-bottom'>
+            <view class='message'>{{item.message}}</view>
+            <view class='remind' wx:if='{{item.unread_msg_count > 0}}'>{{item.unread_msg_count}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='delete' bindtap='delConversation' data-index='{{index}}'>删除</view>
+    </movable-view>
+  </block>
+</movable-area>
+<!-- </scroll-view> -->

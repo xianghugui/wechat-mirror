@@ -1,0 +1,18 @@
+<!--pages/me/myWallet/trading/index.wxml-->
+<view class="page">
+  <view class="tabs-box">
+    <view wx:for="{{navbar}}" data-idx="{{index}}" class="tabs-item {{currentTab==index ? 'active-class' : ''}}" wx:key="{{item.orderId}}" bindtap="navbarTap">{{item}}</view>
+  </view>
+  <scroll-view scroll-y bindscrolltolower="onReachBottom">
+    <view style="height:15rpx;background-color:#f3f3f3;"></view>
+    <view class="income-detail">
+      <view class="detail-item" wx:for="{{queryList}}" wx:key="{{index}}">
+        <view class="detail-title">{{currentTab === 1 ? item.userName : item.goodsName}}</view>
+        <view class="detail-num">{{item.price === null ? '' : item.price}}</view>
+        <view class="detail-date">{{item.createTime}}</view>
+        <view class="detail-status" wx:if="{{currentTab==0}}">{{status[0][item.status]}}</view>
+        <view class="detail-status" wx:else>{{status[1][item.status]}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

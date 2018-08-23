@@ -1,0 +1,21 @@
+<!--pages/showGoods/index.wxml-->
+<!-- banner -->
+<view class="page show-goods">
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular>
+    <block wx:for="{{imgUrls}}" wx:key="id">
+      <swiper-item>
+        <image mode="aspectFill" src="{{item.resourceUrl}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+   <view class='goods-content'>
+    <view class="goods-info">
+      <view class='goods-title'>{{name}}</view>
+      <view class='goods-price'>￥{{price}}</view>
+    </view>
+    <view class='goods-text'>
+      <span class='goods-shop'>{{shopName}}</span>
+      <span class='goods-spec'>{{goodsSpec}}</span>
+    </view>
+  </view> 
+</view>

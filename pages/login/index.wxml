@@ -1,0 +1,27 @@
+<!--pages/login/index.wxml-->
+<view class="page">
+  <form bindsubmit="formSubmit">
+    <image src='../../static/imgs/logo.png'></image>
+    <view class='inputLint'>
+      <view class='inputborder'>
+        <text class='inputTitle'>账号</text>
+        <input name='username' placeholder='请输入手机号' value='15659293665'></input>
+      </view>
+    </view>
+    <view class='inputLint'>
+      <view class='inputborder'>
+        <text class='inputTitle'>密码</text>
+        <input name='password' password='true' placeholder='请输入密码' value='123456'></input>
+      </view>
+    </view>
+    <view class='protocol'>
+      <radio checked='true'></radio>
+        我已同意
+        <navigator url=''>《用户协议》</navigator>
+    </view>
+    <view class="btn-area">
+      <button formType="submit" disabled='{{disabled}}'>{{disabled? '登录中' : '立即登录'}}</button>
+    </view>
+    
+  </form>
+</view>

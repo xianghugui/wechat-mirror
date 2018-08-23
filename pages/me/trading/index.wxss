@@ -1,0 +1,89 @@
+/* pages/me/myWallet/financeDetail/incomeDetail/index.wxss */
+page{
+  background-color: #f3f3f3;
+}
+/* 标签 */
+
+.tabs-box {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+}
+
+.tabs-item {
+  min-width: 140rpx;
+  font-size: 32rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  text-align: center;
+  position: relative;
+}
+
+.active-class {
+  color: #51c5c7;
+}
+
+.active-class:before {
+  content: "";
+  width: 100%;
+  height: 6rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #51c5c7;
+}
+
+scroll-view {
+  position: absolute;
+  width: 750rpx;
+  top: 85rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* 标签下的内容*/
+.detail-item{
+  width:100%;
+  height:140rpx;
+  box-sizing:border-box;
+  background-color: #fff;
+  padding:28rpx 14.5px;
+  border-bottom:1px solid #E3E3E3;
+  position:relative;
+}
+.detail-title{
+  width:75%;
+  height:40rpx;
+  line-height:40rpx;
+  font-size:30rpx;
+  color:#373737;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.subtitle {
+  color:#ACACAC;
+  margin-left:-15rpx;
+}
+
+.detail-num{
+  font-size:44rpx;
+  color:#36C5CA;
+  position:absolute;
+  right:18px;
+  top:20rpx;
+}
+.detail-date{
+  height:38rpx;
+  line-height:38rpx;
+  font-size:26rpx;
+  margin-top:6rpx;
+  color:#959595;
+}
+.detail-status{
+  font-size:28rpx;
+  color:#959595;
+  position:absolute;
+  right:18px;
+  bottom:28rpx;
+} 

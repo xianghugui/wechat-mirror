@@ -1,0 +1,106 @@
+/* pages/order/recedeManage/showRefundsInfo/index.wxss */
+page{
+  background-color: #f3f3f3;
+}
+.page-content{
+  padding-top:35rpx;
+}
+.time-line{
+  content: '';
+  position: absolute;
+  top: 50rpx;
+  left: 68rpx;
+  height: 90%;
+  width: 1px;
+  background: #A7A7A7;
+}
+
+.show-div{
+  width: 600rpx;
+  min-height: 135rpx;
+  /* margin-top: 35rpx; */
+  margin-left: 57rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+  box-sizing:border-box;
+  font-size:28rpx;
+}
+
+.show-ruan{
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  top:32rpx;
+  border-radius: 50%;
+  background-color: #A7A7A7;
+}
+.show{
+  width: 550rpx;
+  min-height: 135rpx;
+  background: #ffffff;
+  border-radius:15rpx;
+  margin-left:50rpx;
+  box-sizing: border-box;
+  position:relative;
+}
+
+.show:after{
+  content:"";
+  display:table;
+}
+
+.show-title{
+  height:90rpx;
+  line-height:90rpx;
+  font-size: 35rpx;
+  font-weight:bolder;
+  padding-left:15rpx;
+}
+.show-content{
+  border-top: 1rpx solid #E8E8E8;
+  min-height: 45rpx;
+  line-height:45rpx;
+  box-sizing:border-box;
+  padding-left:30rpx;
+  color:#545454;
+}
+
+.image{
+  position: absolute;
+  height: 100%;
+  width: 150rpx;
+  top: 0;
+  right: 0;
+}
+
+.create-time{
+  min-height:0;
+  line-height:45rpx;
+  padding-left:30rpx;
+  color:#AAAAAA;
+}
+
+.show-bottom{
+  height:50rpx;
+  line-height:50rpx;
+  padding: 10rpx;
+}
+
+.show-button{
+  float: right;
+  padding-left:20rpx;
+  padding-right:20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  font-size: 25rpx;
+  box-sizing:border-box;
+  margin-right:20rpx;
+  border:1rpx solid #c3c3c3;
+}
+
+.confirm{
+  background-color:#49c4cb;
+  color:#ffffff;
+}

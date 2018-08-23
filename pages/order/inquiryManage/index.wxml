@@ -1,0 +1,31 @@
+<!--pages/order/inquiryManage/index.wxml-->
+<view class="page">
+  <view class="tabs-box">
+    <view wx:for="{{navbar}}" data-idx="{{index}}" class="tabs-item {{currentTab==index ? 'active-class' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</view>
+  </view>
+
+  <scroll-view scroll-y="scroll-y" bindscrolltolower="lower">
+    <block wx:for="{{orderList}}" wx:key="orderId">
+      <navigator class='goods-content' url='../videoOrderInfo/index?orderId={{item.videoOrderId}}'>
+        <view class='goods-img' catchtap='playVideo' data-videosrc='{{item.videoSrc.resourceUrl}}'>
+          <image mode="aspectFill" src='{{item.videoImageSrc.resourceUrl}}'></image>
+          <image src='../../../static/imgs/play.png'></image>
+        </view>
+        <view class='goods-text'>
+          <view class='goods-title'>订单号：
+            <span>{{item.videoOrderId}}</span>
+          </view>
+          <view class='goods-title vertical-center' wx:if='{{item.phone != null}}'>询价人手机：
+            <span>{{item.phone}}</span>
+          </view>
+          <view class='goods-title'>
+            <view class="time">{{item.createTime}}</view>
+            <view class="goods-status">{{status[item.status]}}</view>
+          </view>
+        </view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+    </block>
+    <view class="hasMoreData" wx:if="{{orderList.length == total && orderList.length>0}}">暂无更多数据</view>
+  </scroll-view>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/order/recedeManage/index.wxml-->
+<view class="page">
+  <view class="tabs-box">
+    <view wx:for="{{navbar}}" data-idx="{{index}}" class="tabs-item {{currentTab==index ? 'active-class' : ''}}" wx:key="index" bindtap="navbarTap">{{item}}</view>
+  </view>
+
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower">
+    <view class="goods-item" wx:for="{{orderList}}" wx:key="{{item.refundId}}">
+      <view class='goods-content' bindtap='jumpToShowRefundInfo' data-refundid='{{item.refundId}}'>
+        <view class='goods-img' wx:if="{{currentTab==1}}">     
+          <image class='image' mode="aspectFill" src='{{item.videoImageSrc.resourceUrl}}'></image>
+        </view> 
+        <image class='goods-img' mode="aspectFill" src='{{item.imageSrc[0].resourceUrl}}' wx:else></image>
+        <view class='goods-text'>
+          <view class='goods-title'>订单号：
+            <span>{{item.orderId}}</span>
+          </view>
+          <view class='goods-title vertical-center'>收货人：
+            <span>{{item.userName}}</span>
+          </view>
+          <view class='goods-title'>
+            <view class="time">{{item.applicationTime}}</view>
+            <view class="goods-status">{{status[item.status]}}</view>
+          </view>
+        </view>
+        <view class="navigator-arrow"></view>
+      </view>
+      <view class='recede-price' wx:if="{{currentTab == 0}}">
+        退款金额：￥{{item.price*100*item.num/100}}
+      </view>
+      <view class='recede-price' wx:else>
+        退款金额：￥{{item.price}}
+      </view>
+    </view>
+    <view class="hasMoreData" wx:if="{{orderList.length == total && orderList.length>0}}">暂无更多数据</view>
+  </scroll-view>
+</view>
