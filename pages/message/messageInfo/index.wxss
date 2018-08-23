@@ -28,6 +28,7 @@
   color: rgb(50, 50, 50);
   line-height: 50rpx;
   overflow: hidden;
+  text-align:justify;
 }
 
 /* ---------------------------富文本样式----------------------------- */
