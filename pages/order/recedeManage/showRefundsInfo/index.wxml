@@ -52,7 +52,7 @@
       <view class='show-title'>申请退款</view>
       <view class='show-content'>
         <view>退款类型：退款</view>
-        <view>原因：{{info.content}}</view>
+        <view class='refund-reason'>原因：{{info.content}}</view>
         <view wx:if='{{info.type != 1 && info.price != null}}'>商品退款：
           <view style="color:#FF0216;display:inline-block">￥{{info.price}}</view>
         </view>
