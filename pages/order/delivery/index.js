@@ -12,6 +12,7 @@ Page({
     orderType: null, //0:我的购物1:试衣订单2:询价订单
     url: ['api/order/', 'api/trygoods/', 'api/videoOrder/'],
     disabled: false, //按钮禁用
+    width: 0,
   },
 
   /**

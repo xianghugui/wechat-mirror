@@ -36,8 +36,7 @@
         <view class='goods-content'>
           <view class="goods-title" style="font-size:36rpx;color:#fea201;" wx:if='{{orderDeatil.status!=0}}'>￥{{orderDeatil.goodsPrice}}</view>
           <view class="goods-title" style="font-size:36rpx;color:#fea201;" wx:else>待报价</view>
-          <view style="font-size:24rpx;color:#c0c0c0;"> {{orderDeatil.goodsSize}}</view>
-          <view style="font-size:24rpx;color:#c0c0c0;" wx:if='{{orderDeatil.goodsNumber!=null}}'> x{{orderDeatil.goodsNumber}}</view>
+          <view style="font-size:24rpx;color:#c0c0c0;" wx:if='{{orderDeatil.goodsNumber!=null}}'>{{orderDeatil.goodsSize}}   x{{orderDeatil.goodsNumber}}</view>
         </view>
       </view>
       <view class='goods-message2' wx:if='{{orderDeatil.status!=0}}'>

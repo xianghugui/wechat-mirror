@@ -16,11 +16,11 @@
     </view>
 
     <view class='user-message' wx:if='{{orderDeatil.userAddress != null}}'>
-      <icon class='fa  fa-map-marker'></icon>
+      <image class='marker' src='../../../static/imgs/syx_wz@2x.png'></image>
       <view class='user-content'>
         <view class='user-div'>
-          <view>收货人：{{orderDeatil.userName}}</view>
-          <view>电话：{{orderDeatil.userPhone}}</view>
+          <view class='user-name'>收货人：{{orderDeatil.userName}}</view>
+          <view class='user-phone'>电话：{{orderDeatil.userPhone}}</view>
         </view>
         <view class='user-div'>
           <span>收货地址：{{orderDeatil.userAddress}}</span>

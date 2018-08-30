@@ -67,3 +67,7 @@ radio{
 navigator{
   color: rgb(75, 194, 201);
 }
+
+button::after{
+  border: none;
+}

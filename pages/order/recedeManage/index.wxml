@@ -32,6 +32,6 @@
         退款金额：￥{{item.price}}
       </view>
     </view>
-    <view class="hasMoreData" wx:if="{{orderList.length == total && orderList.length>0}}">暂无更多数据</view>
+    <view class="hasMoreData" wx:if="{{orderList.length == total && orderList.length>5}}">暂无更多数据</view>
   </scroll-view>
 </view>

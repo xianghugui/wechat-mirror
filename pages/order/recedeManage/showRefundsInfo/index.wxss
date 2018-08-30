@@ -1,71 +1,77 @@
 /* pages/order/recedeManage/showRefundsInfo/index.wxss */
-page{
+
+page {
   background-color: #f3f3f3;
 }
-.page-content{
-  padding-top:35rpx;
+
+.page-content {
+  padding-top: 35rpx;
 }
-.time-line{
+
+.time-line {
   content: '';
   position: absolute;
   top: 50rpx;
   left: 68rpx;
   height: 90%;
   width: 1px;
-  background: #A7A7A7;
+  background: #aaa;
 }
 
-.show-div{
+.show-div {
   width: 600rpx;
   min-height: 135rpx;
   /* margin-top: 35rpx; */
   margin-left: 57rpx;
   margin-bottom: 30rpx;
   position: relative;
-  box-sizing:border-box;
-  font-size:28rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
 }
 
-.show-ruan{
+.show-ruan {
   width: 26rpx;
   height: 26rpx;
   position: absolute;
-  top:32rpx;
+  top: 32rpx;
   border-radius: 50%;
-  background-color: #A7A7A7;
+  background-color: #49c4cb;
 }
-.show{
+
+.show {
   width: 550rpx;
   min-height: 135rpx;
-  background: #ffffff;
-  border-radius:15rpx;
-  margin-left:50rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  margin-left: 50rpx;
   box-sizing: border-box;
-  position:relative;
+  position: relative;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #e3e3e3;
 }
 
-.show:after{
-  content:"";
-  display:table;
+.show:after {
+  content: "";
+  display: table;
 }
 
-.show-title{
-  height:90rpx;
-  line-height:90rpx;
+.show-title {
+  height: 90rpx;
+  line-height: 90rpx;
   font-size: 35rpx;
-  font-weight:bolder;
-  padding-left:15rpx;
-}
-.show-content{
-  border-top: 1rpx solid #E8E8E8;
-  min-height: 45rpx;
-  line-height:45rpx;
-  box-sizing:border-box;
-  padding-left:30rpx;
-  color:#545454;
+  /* font-weight: bolder; */
+  padding-left: 30rpx;
 }
 
-.image{
+.show-content {
+  border-top: 1rpx solid #e8e8e8;
+  min-height: 45rpx;
+  line-height: 45rpx;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx 0rpx 30rpx;
+  color: #545454;
+}
+
+.image {
   position: absolute;
   height: 100%;
   width: 150rpx;
@@ -73,34 +79,47 @@ page{
   right: 0;
 }
 
-.create-time{
-  min-height:0;
-  line-height:45rpx;
-  padding-left:30rpx;
-  color:#AAAAAA;
+.create-time {
+  min-height: 0;
+  line-height: 45rpx;
+  padding: 0rpx 30rpx 10rpx 30rpx;
+  color: #aaa;
+  font-size:23rpx;
 }
 
-.show-bottom{
-  height:50rpx;
-  line-height:50rpx;
-  padding: 10rpx;
-}
-
-.show-button{
-  float: right;
-  padding-left:20rpx;
-  padding-right:20rpx;
+.show-bottom {
   height: 50rpx;
   line-height: 50rpx;
-  border-radius: 25rpx;
-  text-align: center;
-  font-size: 25rpx;
-  box-sizing:border-box;
-  margin-right:20rpx;
-  border:1rpx solid #c3c3c3;
+  padding: 10rpx 10rpx 30rpx 10rpx;
 }
 
-.confirm{
-  background-color:#49c4cb;
-  color:#ffffff;
+.show-button {
+  height: 60rpx;
+  width:40%;
+  padding: 0rpx 20rpx;
+  background-color: white;
+  line-height: 57rpx;
+  text-align: center;
+  font-size: 26rpx;
+  float: right;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 60rpx;
+  box-shadow: 0rpx 1rpx 4rpx 0rpx #e3e3e3;
+}
+
+.contact {
+  border: 1rpx solid #e3e3e3;
+  margin: 0% 3% 0% 7%;
+}
+
+.confirm {
+  background-color: #49c4cb;
+  color: #fff;
+  border: 1rpx solid #49c4cb;
+  margin: 0% 7% 0% 3%;
+}
+
+button::after {
+  border: none;
 }

@@ -70,10 +70,8 @@
         <view>快递单号：{{info.expressNumber != null ? info.expressNumber : ''}}</view>
       </view>
       <view class='show-bottom' wx:if='{{info.status == 1}}'>
-        <button class='show-button' open-type="contact">联系平台</button>
-        <button class='show-button confirm' bindtap='confirm' disabled='{{disabled}}'>
-          确认收货
-        </button>
+        <button class='show-button confirm' bindtap='confirm' disabled='{{disabled}}'>确认收货</button>
+        <button class='show-button contact' open-type="contact">联系平台</button>
       </view>
     </view>
   </view>
