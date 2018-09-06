@@ -48,6 +48,7 @@ Page({
             username: data.username,
             password: data.password
           }
+          app.maintain();
           //JMessage的初始化/注册/登录
           JMCommon.JMinit(userId);
           that.setData({
@@ -56,7 +57,12 @@ Page({
           wx.switchTab({
             url: '../goods/index'
           });
-        },function(){
+        },function(res){
+          wx.showToast({
+            title: res.data.message,
+            icon: 'none',
+            duration: 2000
+          })
           that.setData({
             disabled: false
           })

@@ -33,7 +33,7 @@ App({
           successCallback && successCallback(res)
         } else {
           if(failCallback){
-            failCallback()
+            failCallback(res)
           }else{
             wx.showToast({
               title: res.data.message,
@@ -46,8 +46,11 @@ App({
   },
 
   onLaunch: function (options) {
+
+  },
+  maintain: function () {
     var that = this
-    setInterval(() => {
+    var timer = setInterval(() => {
       wx.login({
         success: res => {
           var data = that.globalData.userInfo
@@ -57,6 +60,15 @@ App({
             'content-type': 'application/x-www-form-urlencoded'
           }, function (res) {
             that.globalData.header.Cookie = 'JSESSIONID=' + res.data.data.session;
+          }, function (res) {
+            wx.showToast({
+              title: res.data.message,
+              icon: "none"
+            })
+            clearInterval(timer);
+            wx.redirectTo({
+              url: '/pages/login/index',
+            })
           })
         }
       })
