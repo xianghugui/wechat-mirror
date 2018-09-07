@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "会话列表",
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "swider-left": "../components/sliderLeft/sliderLeft"
+  }
 }

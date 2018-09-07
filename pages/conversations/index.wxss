@@ -1,20 +1,15 @@
 /* pages/conversation/index.wxss */
 
-page, scroll-view, movable-area{
+page{
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: rgb(243, 243, 243);
 }
 
-.conversation{
-  width: 950rpx;
-  height: 180rpx;
-  display: flex;
-  position: static;
-}
-
 .userInfo{
-  width: 750rpx;
+  width: 760rpx;
   height: 180rpx;
   display: flex;
   padding: 20rpx;
@@ -45,10 +40,10 @@ page, scroll-view, movable-area{
 }
 
 .avatar{
-  height: 140rpx;
-  width: 140rpx;
+  height: 130rpx;
+  width: 130rpx;
   border-radius: 70rpx;
-  margin-right: 60rpx;
+  margin-right: 30rpx;
 }
 
 .remind{
@@ -62,12 +57,19 @@ page, scroll-view, movable-area{
   color: white;
 }
 
-.delete{
-  width: 200rpx;
-  height: 180rpx;
-  background: red;
-  color: white;
-  font-size: 45rpx;
-  line-height: 180rpx;
-  text-align: center;
+.no-data-box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #bbbbbb;
+  font-size: 30rpx;
+}
+
+.no-data-image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 30rpx;
 }

@@ -8,66 +8,15 @@ Page({
    */
   data: {
     conversations: [],
-    x: 0,
-    index: 0
-  },
-
-
-  onChange: function (e) {
-    this.setData({
-      index: e.currentTarget.dataset.index
-    })
-    if (e.detail.source === 'friction') {
-      if (e.detail.x < -48) {
-        this.showDeleteButton()
-      } else {
-        this.hideDeleteButton()
-      }
-    }
+    total: null,
   },
 
   /**
-   * 显示删除按钮
+   * 隐藏所有删除按钮
    */
-  showDeleteButton: function () {
-    this.setXmove(-96)
-  },
-
-  /**
-   * 隐藏删除按钮
-   */
-  hideDeleteButton: function () {
-    this.setXmove(0)
-  },
-
-  /**
-   * 删除会话
-   */
-  delConversation: function (e) {
-    var index = e.currentTarget.dataset.index;
+  touchstart: function (e) {
     var conversations = this.data.conversations;
-    conversations.splice(index, 1);
-    this.setData({
-      conversations: conversations
-    });
-    wx.setStorageSync("conversations", conversations);
-  },
-
-  /**
-  * 设置movable-view位移
-  */
-  setXmove: function (xmove) {
-    var index = this.data.index
-    let conversations = this.data.conversations
-    if (xmove !== 0) {
-      for (let i = 0, length = conversations.length; i < length; i++) {
-        if (conversations[i].x !== 0) {
-          conversations[i].x = 0;
-          break
-        }
-      }
-    }
-    conversations[index].x = xmove
+    conversations[e.detail.index].isOpen = false;
     this.setData({
       conversations: conversations
     })
@@ -78,8 +27,21 @@ Page({
    */
   toChat: function (e) {
     wx.navigateTo({
-      url: '../chat/index?userId=' + e.currentTarget.dataset.userid,
+      url: '../chat/index?userId=' + e.detail.itemid,
     })
+  },
+
+  /**
+   * 删除会话
+   */
+  delConversation: function (e) {
+    var index = e.detail.index;
+    var conversations = this.data.conversations;
+    conversations.splice(index, 1);
+    this.setData({
+      conversations: conversations,
+    });
+    wx.setStorageSync("conversations", conversations);
   },
   /**
    * 生命周期函数--监听页面加载

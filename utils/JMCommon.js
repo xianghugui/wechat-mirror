@@ -81,10 +81,12 @@ var JMLogin = function (userId) {
                     message: message.content.msg_type === "text" ? message.content.msg_body.text : "[图片]"
                   }
                 );
-                conversations.sort(function (a, b) {
-                  return b.mtime - a.mtime;
-                })
-                wx.setStorageSync('conversations', conversations);
+                if (i == dataLength - 1) {
+                  conversations.sort(function (a, b) {
+                    return parseInt(b.mtime) - parseInt(a.mtime);
+                  })
+                  wx.setStorageSync('conversations', conversations);
+                }
               },
               function(){}
             );
@@ -117,7 +119,12 @@ var JMLogin = function (userId) {
                           message: message.content.msg_type === "text" ? message.content.msg_body.text : "[图片]"
                         }
                       );
-                      wx.setStorageSync('conversations', conversations);
+                      if (i == dataLength - 1) {
+                        conversations.sort(function (a, b) {
+                          return parseInt(b.mtime) - parseInt(a.mtime);
+                        })
+                        wx.setStorageSync('conversations', conversations);
+                      }
                     }
                   );
                 }
@@ -210,7 +217,9 @@ var JMLogin = function (userId) {
                     unread_msg_count: data[i].unread_msg_count
                   }
                 );
-                wx.setStorageSync('conversations', conversations)
+                if (i == length - 1) {
+                  wx.setStorageSync('conversations', conversations);
+                }
               },
               function (res) {
                 conversations.unshift(
