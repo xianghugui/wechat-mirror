@@ -79,8 +79,10 @@ Page({
       messageList: []
     })
     var that = this
+    wx.showNavigationBarLoading();
     setTimeout(function() {
       that.loadMessageData();
+      wx.hideNavigationBarLoading();
     }, 1000)
   },
 
