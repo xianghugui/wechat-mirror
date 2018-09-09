@@ -39,12 +39,12 @@
       </view>
       <view class='goods-message2'>
         <view class='goods-div'>订单总价
-          <view style="float:right;color:#fea201;" wx:if='{{orderDeatil.goodsPrice!=null}}'>{{orderDeatil.goodsPrice * orderDeatil.goodsNumber}}</view>
+          <view style="float:right;color:#fea201;" wx:if='{{orderDeatil.goodsPrice!=null}}'>{{orderDeatil.goodsPrice * 100 * orderDeatil.goodsNumber/100}}</view>
         </view>
       </view>
       <view class='goods-message3'>
         <view class='goods-div'>实际收款
-          <view style="float:right;color:#fea201;" wx:if='{{orderDeatil.goodsPrice!=null}}'>{{orderDeatil.goodsPrice * orderDeatil.goodsNumber}}</view>
+          <view style="float:right;color:#fea201;" wx:if='{{orderDeatil.goodsPrice!=null}}'>{{orderDeatil.goodsPrice * 100 * orderDeatil.goodsNumber/100}}</view>
         </view>
       </view>
     </view>
