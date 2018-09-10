@@ -16,11 +16,11 @@
     </view>
 
     <view class='user-message' wx:if='{{orderDeatil.status != 0 && orderDeatil.status != 1}}'>
-      <icon class='fa  fa-map-marker'></icon>
+      <image class='marker' src='../../../static/imgs/syx_wz@2x.png'></image>
       <view class='user-content'>
         <view class='user-div'>
-          <view>收货人：{{orderDeatil.userName}}</view>
-          <view>电话：{{orderDeatil.userPhone}}</view>
+          <view class='user-name'>收货人：{{orderDeatil.userName}}</view>
+          <view class='user-phone'>电话：{{orderDeatil.userPhone}}</view>
         </view>
         <view class='user-div'>
           <view>收货地址：{{orderDeatil.userAddress}}</view>
@@ -36,7 +36,7 @@
         <view class='goods-content'>
           <view class="goods-title" style="font-size:36rpx;color:#fea201;" wx:if='{{orderDeatil.status!=0}}'>￥{{orderDeatil.goodsPrice}}</view>
           <view class="goods-title" style="font-size:36rpx;color:#fea201;" wx:else>待报价</view>
-          <view style="font-size:24rpx;color:#c0c0c0;" wx:if='{{orderDeatil.goodsNumber!=null}}'>{{orderDeatil.goodsSize}}   x{{orderDeatil.goodsNumber}}</view>
+          <view style="font-size:24rpx;color:#c0c0c0;" wx:if='{{orderDeatil.goodsNumber!=null}}'>{{orderDeatil.goodsSize}} x{{orderDeatil.goodsNumber}}</view>
         </view>
       </view>
       <view class='goods-message2' wx:if='{{orderDeatil.status!=0}}'>

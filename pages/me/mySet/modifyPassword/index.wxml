@@ -16,6 +16,5 @@
     <view class="btn-area">
       <button formType="submit">立即修改</button>
     </view>
-    <view class="forget-password">忘记密码?</view>
   </form>
 </view>

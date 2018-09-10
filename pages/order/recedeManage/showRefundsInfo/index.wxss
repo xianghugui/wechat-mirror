@@ -2,6 +2,9 @@
 
 page {
   background-color: #f3f3f3;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
 }
 
 .page-content {
@@ -12,17 +15,18 @@ page {
   content: '';
   position: absolute;
   top: 50rpx;
-  left: 68rpx;
+  left: 67rpx;
   height: 90%;
-  width: 1px;
-  background: #aaa;
+  width: 3px;
+  background: #fff;
+  box-shadow:-1rpx 0rpx 8rpx 0rpx #cecece;
 }
 
 .show-div {
   width: 600rpx;
   min-height: 135rpx;
   /* margin-top: 35rpx; */
-  margin-left: 57rpx;
+  margin-left: 58rpx;
   margin-bottom: 30rpx;
   position: relative;
   box-sizing: border-box;
@@ -36,6 +40,7 @@ page {
   top: 32rpx;
   border-radius: 50%;
   background-color: #49c4cb;
+  box-shadow:2rpx 2rpx 8rpx 0rpx #cecece;
 }
 
 .show {
@@ -57,7 +62,7 @@ page {
 .show-title {
   height: 90rpx;
   line-height: 90rpx;
-  font-size: 35rpx;
+  font-size: 30rpx;
   /* font-weight: bolder; */
   padding-left: 30rpx;
 }
@@ -67,7 +72,7 @@ page {
   min-height: 45rpx;
   line-height: 45rpx;
   box-sizing: border-box;
-  padding: 20rpx 30rpx 0rpx 30rpx;
+  padding: 20rpx 30rpx 10rpx 30rpx;
   color: #545454;
 }
 
@@ -80,9 +85,6 @@ page {
 }
 
 .create-time {
-  min-height: 0;
-  line-height: 45rpx;
-  padding: 0rpx 30rpx 10rpx 30rpx;
   color: #aaa;
   font-size:23rpx;
 }
@@ -105,7 +107,7 @@ page {
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 60rpx;
-  box-shadow: 0rpx 1rpx 8rpx 0rpx #e3e3e3;
+  box-shadow: 0rpx 1rpx 5rpx 0rpx #f0ecec;
 }
 
 .contact {

@@ -56,8 +56,8 @@
         <view wx:if='{{info.type != 1 && info.price != null}}'>商品退款：
           <view style="color:#FF0216;display:inline-block">￥{{info.price}}</view>
         </view>
+        <view class='create-time'>{{info.applicationTime}}</view>
       </view>
-      <view class='create-time'>{{info.applicationTime}}</view>
     </view>
   </view>
   <!-- 待商家确认收货 -->
@@ -90,9 +90,8 @@
         <view wx:if='{{info.type != 1 && info.price != null}}'>商品退款：
           <view style="color:#FF0216;display:inline-block">￥{{info.price*100*info.num/100}}</view>
         </view>
-
+        <view class='create-time'>{{info.applicationTime}}</view>
       </view>
-      <view class='create-time'>{{info.applicationTime}}</view>
     </view>
   </view>
 </scroll-view>
