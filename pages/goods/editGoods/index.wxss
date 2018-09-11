@@ -1,58 +1,68 @@
 /* pages/editGoods/index.wxss */
-page{
+
+page {
   width: 100%;
   background-color: #f3f3f3;
-  box-sizing:border-box;
+  box-sizing: border-box;
+  font-size: 35rpx;
 }
-.img-v{
+
+.img-v {
   width: 100%;
-  margin-top:22rpx;
+  margin-top: 22rpx;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 20rpx;
 }
-.goodsImages{
+
+.goodsImages {
   width: 100rpx;
   height: 150rpx;
 }
-.upload-img-btn, .fa-spinner{
+
+.upload-img-btn, .fa-spinner {
   width: 140rpx;
   height: 140rpx;
   margin-left: 22rpx;
   font-size: 100rpx;
   border-radius: 10rpx;
-  color: #CECECE;
+  color: #cecece;
   text-align: center;
   line-height: 156rpx;
-  border: 10rpx dashed #CECECE;
+  border: 10rpx dashed #cecece;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.fa-spinner{
+
+.fa-spinner {
   margin: 0;
   width: 120rpx;
   height: 120rpx;
   border: none;
 }
-video{
+
+video {
   width: 160rpx;
   height: 160rpx;
   margin-left: 22rpx;
   border-radius: 10rpx;
   overflow: hidden;
 }
-.imgbox{
+
+.imgbox {
   position: relative;
   width: 150rpx;
   height: 150rpx;
   margin-left: 22rpx;
   margin-bottom: 22rpx;
-  text-align:center;
-  vertical-align:middle;
+  text-align: center;
+  vertical-align: middle;
   float: left;
 }
-.delete-btn{
+
+.delete-btn {
   position: absolute;
   right: 5rpx;
   top: 5rpx;
@@ -60,114 +70,134 @@ video{
   height: 35rpx;
   border-radius: 50%;
 }
-.inputLint{
+
+.inputLint {
   display: flex;
   width: 100%;
-  height: 80rpx;
+  height: 90rpx;
   background-color: white;
   margin-top: 22rpx;
   padding-left: 40rpx;
-  line-height: 80rpx;
+  line-height: 90rpx;
   box-sizing: border-box;
 }
-.inputTitle{
+
+.inputTitle {
   flex-basis: 100rpx;
   height: 80rpx;
-  text-align: center;
   float: left;
 }
-input, picker{
+
+input, picker {
   flex: 1;
   width: 600rpx;
-  height: 80rpx;
+  height: 90rpx;
   float: right;
   margin-right: 40rpx;
+  font-size: 31rpx;
 }
 
-.event{
+.event {
   flex-basis: 250rpx;
 }
 
-.picker{
-  text-align: right;
-  height: 80rpx;
-  padding-right: 20rpx;
-  color: #CECECE;
+.picker {
+  display: flex;
+  color: #cecece;
+  justify-content: right;
+  font-size: 30rpx;
 }
-.moudle-label{
-  padding: 0 20rpx;
-  margin-right:40rpx;
+
+.moudle-label {
+  padding: 0 15rpx;
+  margin-right: 40rpx;
   height: 60rpx;
-  line-height:60rpx;
-  font-size:30rpx;
-  text-align:center;
-  padding-left:10rpx;
-  padding-right:10rpx;
-  border:1px solid transparent;
-  border-radius:20rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border: 1px solid transparent;
+  /* border-radius: 20rpx; */
   background-color: #f3f3f3;
-  box-sizing:border-box;
-  display : inline-flex;
+  box-sizing: border-box;
+  display: inline-flex;
+  color: rgb(48, 46, 46)
 }
-.borderShow{
-  border:1px solid #9BD9DA;
-  color:#40BEC2;
+
+.borderShow {
+  border: 1px solid #9bd9da;
+  color: #40bec2;
 }
-.selectMoudle{
-  width: 100%;
+
+.selectMoudle {
+  /* width: 100%; */
   background-color: white;
   margin-top: 22rpx;
   line-height: 80rpx;
   padding-left: 40rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
 }
-.select-title{
+
+.select-title {
   width: 300rpx;
   height: 80rpx;
 }
-.saveButton{
+
+.saveButton {
   width: 500rpx;
   height: 80rpx;
   border-radius: 40rpx;
-  background-color: #4BC2CA;
+  background-color: #4bc2ca;
   color: white;
   line-height: 80rpx;
 }
-.buttonView{
+
+.buttonView {
   width: 750rpx;
   height: 150rpx;
   padding-top: 70rpx;
 }
-.fa-angle-right{
-  width: 80rpx;
+
+.fa-angle-right {
+  width: 40rpx;
   font-size: 60rpx;
-  line-height: 80rpx;
+  line-height: 90rpx;
   text-align: center;
 }
-.mask{
-  position:fixed;
-  top:0rpx;
-  width:100%;
-  height:100%;
+
+.mask {
+  position: fixed;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
   background-color: #000;
-  z-index:990;
-}
-.img-preview{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:100%;
-  background-color:#fff;
-  z-index:999;
-}
-swiper-item,swiper-item image{
-  width:100%;
-  height:100%
+  z-index: 990;
 }
 
-.uploading{
+.img-preview {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 999;
+}
+
+swiper-item, swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.uploading {
   animation: uploading 1s linear infinite;
 }
-@-webkit-keyframes uploading{
-  0%   {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
+
+@-webkit-keyframes uploading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -10,7 +10,7 @@
         </view>
         <view class='goods-text'>
           <view class='goods-title'>{{item.name}}</view>
-          <view class="goods-price">￥{{item.price}}</view>
+          <view class="goods-price">¥{{item.price}}</view>
           <view class="info-item">
             <view class="goods-type">类目：{{item.className}}</view>
             <view>人群：{{item.ageGrade}}</view>

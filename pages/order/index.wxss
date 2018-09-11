@@ -28,6 +28,7 @@ page {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow:1rpx 1rpx 5rpx 0rpx #cecece;
 }
 
 image{

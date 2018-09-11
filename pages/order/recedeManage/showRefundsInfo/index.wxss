@@ -2,24 +2,28 @@
 
 page {
   background-color: #f3f3f3;
-  overflow-y: scroll;
   height: 100%;
   width: 100%;
 }
 
 .page-content {
-  padding-top: 35rpx;
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
 }
 
 .time-line {
   content: '';
   position: absolute;
-  top: 50rpx;
+  top: 65rpx;
   left: 67rpx;
+  bottom: 20rpx;
   height: 90%;
   width: 3px;
   background: #fff;
-  box-shadow:-1rpx 0rpx 8rpx 0rpx #cecece;
+  box-shadow: -1rpx 0rpx 8rpx 0rpx #cecece;
 }
 
 .show-div {
@@ -28,6 +32,7 @@ page {
   /* margin-top: 35rpx; */
   margin-left: 58rpx;
   margin-bottom: 30rpx;
+  margin-top: 35rpx;
   position: relative;
   box-sizing: border-box;
   font-size: 28rpx;
@@ -40,7 +45,7 @@ page {
   top: 32rpx;
   border-radius: 50%;
   background-color: #49c4cb;
-  box-shadow:2rpx 2rpx 8rpx 0rpx #cecece;
+  box-shadow: 2rpx 2rpx 8rpx 0rpx #cecece;
 }
 
 .show {
@@ -86,7 +91,7 @@ page {
 
 .create-time {
   color: #aaa;
-  font-size:23rpx;
+  font-size: 23rpx;
 }
 
 .show-bottom {
@@ -97,7 +102,7 @@ page {
 
 .show-button {
   height: 60rpx;
-  width:40%;
+  width: 40%;
   padding: 0rpx 20rpx;
   background-color: white;
   line-height: 57rpx;
@@ -126,6 +131,6 @@ button::after {
   border: none;
 }
 
-.refund-reason{
+.refund-reason {
   text-align: justify;
 }

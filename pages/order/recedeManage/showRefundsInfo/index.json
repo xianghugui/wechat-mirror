@@ -1,5 +1,4 @@
 {
   "navigationBarTitleText": "退款详情",
-  "enablePullDownRefresh": false,
-  "disableScroll":true
+  "enablePullDownRefresh": false
 }

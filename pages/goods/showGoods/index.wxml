@@ -11,7 +11,7 @@
    <view class='goods-content'>
     <view class="goods-info">
       <view class='goods-title'>{{name}}</view>
-      <view class='goods-price'>￥{{price}}</view>
+      <view class='goods-price'>¥{{price}}</view>
     </view>
     <view class='goods-text'>
       <span class='goods-shop'>{{shopName}}</span>
