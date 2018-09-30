@@ -77,10 +77,12 @@
 }
 
 .image{
-  height: 100rpx;
+  width: 100%;
+  height: 100%;
+  /* height: 100rpx;
   width: 150rpx;
   top: 25rpx;
   left: -25rpx;
   position: absolute;
-  transform: rotate(90deg);
+  transform: rotate(90deg); */
 }
