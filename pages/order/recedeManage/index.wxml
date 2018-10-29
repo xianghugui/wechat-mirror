@@ -8,7 +8,7 @@
     <view class="goods-item" wx:for="{{orderList}}" wx:key="{{item.refundId}}">
       <view class='goods-content' bindtap='jumpToShowRefundInfo' data-refundid='{{item.refundId}}'>
         <view class='goods-img' wx:if="{{currentTab==1}}">     
-          <image class='image' mode="aspectFill" src='{{item.videoImageSrc.resourceUrl}}'></image>
+          <image class='image' mode="aspectFill" src='{{item.videoImageUrl}}'></image>
         </view> 
         <image class='goods-img' mode="aspectFill" src='{{item.imageSrc[0].resourceUrl}}' wx:else></image>
         <view class='goods-text'>

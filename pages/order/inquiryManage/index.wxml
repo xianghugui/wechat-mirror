@@ -7,8 +7,8 @@
   <scroll-view scroll-y="scroll-y" bindscrolltolower="lower">
     <block wx:for="{{orderList}}" wx:key="orderId">
       <navigator class='goods-content' url='../videoOrderInfo/index?orderId={{item.videoOrderId}}'>
-        <view class='goods-img' catchtap='playVideo' data-videosrc='{{item.videoSrc.resourceUrl}}'>
-          <image mode="aspectFill" src='{{item.videoImageSrc.resourceUrl}}'></image>
+        <view class='goods-img' catchtap='playVideo' data-videosrc='{{item.videoUrl}}'>
+          <image mode="aspectFill" src='{{item.videoImageUrl}}'></image>
           <image src='../../../static/imgs/play.png'></image>
         </view>
         <view class='goods-text'>
