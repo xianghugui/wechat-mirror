@@ -19,10 +19,10 @@
 }
 
 .image{
-  width: 150rpx;
-  height: 100rpx;
+  width: 100rpx;
+  height: 150rpx;
   position: absolute;
-  top: 25rpx;
-  left: -25rpx;
-  transform: rotate(90deg);
+  top: 0rpx;
+  left: -10rpx;
+  /* transform: rotate(90deg); */
 }

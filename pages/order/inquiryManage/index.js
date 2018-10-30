@@ -15,7 +15,7 @@ Page({
 
   playVideo:function(e){
     wx.navigateTo({
-      url: 'video/index?videoSrc=' + e.currentTarget.dataset.videosrc
+      url: 'video/index?videoSrc=' + encodeURIComponent(e.currentTarget.dataset.videosrc)
     })
   },
 
